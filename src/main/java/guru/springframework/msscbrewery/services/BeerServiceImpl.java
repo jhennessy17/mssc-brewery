@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
+import static java.rmi.server.LogStream.log;
+
 @Service
 public class BeerServiceImpl implements BeerService{
     @Override
@@ -20,5 +22,15 @@ public class BeerServiceImpl implements BeerService{
         return BeerDto.builder()
                 .id(UUID.randomUUID())
                 .build();
+    }
+
+    @Override
+    public void updateBeer(UUID beerId, BeerDto beerDto) {
+
+    }
+
+    @Override
+    public void deleteBeerById(UUID beerId) {
+        log("delete beer");
     }
 }
